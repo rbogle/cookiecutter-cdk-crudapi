@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+  build:
+    commands:
+      - jq . $CODEBUILD_SRC_DIR_dev/output.json
+      - URL=$(jq .Api --raw-output $CODEBUILD_SRC_DIR_dev/output.json)
+      - echo "API URL $URL"
+      - curl -sS "$URL" | jq . -

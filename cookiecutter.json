@@ -1,0 +1,10 @@
+{
+    "project_name": "Name of the project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_class": "{{ cookiecutter.project_slug.split('_')|map('capitalize')|join('') }}",
+    "project_domain": "user",
+    "api_domain": "{{ cookiecutter.project_domain.lower().replace(' ', '_').replace('-', '_') }}",
+    "tags_department": "501",
+    "tags_product": "bb-foundations",
+    "tags_product_detail": "{{ cookiecutter.project_name }}"
+  }
